@@ -11,9 +11,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     const taxPayers = await backend.getAllTaxPayers();
     taxPayerList.innerHTML = taxPayers.map(tp => `
       <div class="tax-payer">
-        <p><strong>TID:</strong> ${tp.tid}</p>
-        <p><strong>Name:</strong> ${tp.firstName} ${tp.lastName}</p>
-        <p><strong>Address:</strong> ${tp.address}</p>
+        <p><i class="fas fa-id-card"></i> <strong>TID:</strong> ${tp.tid}</p>
+        <p><i class="fas fa-user"></i> <strong>Name:</strong> ${tp.firstName} ${tp.lastName}</p>
+        <p><i class="fas fa-home"></i> <strong>Address:</strong> ${tp.address}</p>
       </div>
     `).join('');
   }
@@ -40,13 +40,13 @@ document.addEventListener('DOMContentLoaded', async () => {
       const tp = result[0];
       searchResult.innerHTML = `
         <div class="tax-payer">
-          <p><strong>TID:</strong> ${tp.tid}</p>
-          <p><strong>Name:</strong> ${tp.firstName} ${tp.lastName}</p>
-          <p><strong>Address:</strong> ${tp.address}</p>
+          <p><i class="fas fa-id-card"></i> <strong>TID:</strong> ${tp.tid}</p>
+          <p><i class="fas fa-user"></i> <strong>Name:</strong> ${tp.firstName} ${tp.lastName}</p>
+          <p><i class="fas fa-home"></i> <strong>Address:</strong> ${tp.address}</p>
         </div>
       `;
     } else {
-      searchResult.innerHTML = '<p>No TaxPayer found with the given TID.</p>';
+      searchResult.innerHTML = '<p><i class="fas fa-exclamation-circle"></i> No TaxPayer found with the given TID.</p>';
     }
   });
 
