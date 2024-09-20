@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaxPayer Manager</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TaxPayer Manager</h1>
+        
+        <h2>Add New TaxPayer</h2>
+        <form id="addTaxPayerForm">
+            <input type="text" id="tid" placeholder="TID" required>
+            <input type="text" id="firstName" placeholder="First Name" required>
+            <input type="text" id="lastName" placeholder="Last Name" required>
+            <input type="text" id="address" placeholder="Address" required>
+            <button type="submit">Add TaxPayer</button>
+        </form>
+
+        <h2>Search TaxPayer</h2>
+        <div class="search-container">
+            <input type="text" id="searchTid" placeholder="Enter TID to search">
+            <button id="searchButton">Search</button>
+        </div>
+        <div id="searchResult"></div>
+
+        <h2>All TaxPayers</h2>
+        <div id="taxPayerList"></div>
+    </div>
+
+    <script type="module" src="index.js"></script>
+</body>
+</html>
