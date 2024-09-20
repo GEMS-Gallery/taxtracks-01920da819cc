@@ -5,8 +5,23 @@ type TaxPayer =
    lastName: text;
    tid: text;
  };
+type Result_1 = 
+ variant {
+   err: text;
+   ok;
+ };
+type Result = 
+ variant {
+   err: text;
+   ok: TaxPayer;
+ };
 service : {
-  addTaxPayer: (text, text, text, text) -> ();
-  getAllTaxPayers: () -> (vec TaxPayer) query;
-  searchTaxPayer: (text) -> (opt TaxPayer) query;
+  addTaxPayer: (text, text, text, text) -> (Result_1);
+  getAllTaxPayers: (nat, nat) ->
+   (record {
+      items: vec TaxPayer;
+      total: nat;
+    }) query;
+  searchTaxPayer: (text) -> (Result) query;
+  searchTaxPayersByName: (text) -> (vec TaxPayer) query;
 }
